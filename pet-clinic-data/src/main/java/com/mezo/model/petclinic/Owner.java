@@ -1,4 +1,4 @@
-package com.mezo.model;
+package com.mezo.model.petclinic;
 
 public class Owner extends Person{
 //    private String address;

@@ -1,4 +1,4 @@
-package com.mezo.model;
+package com.mezo.model.petclinic;
 
 import java.time.LocalDate;
 

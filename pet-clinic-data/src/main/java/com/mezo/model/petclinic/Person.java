@@ -1,4 +1,4 @@
-package com.mezo.model;
+package com.mezo.model.petclinic;
 
 public class Person {
     private String firstName;
