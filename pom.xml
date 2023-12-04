@@ -29,9 +29,15 @@
                 <configuration>
                     <goals>install</goals>
                 </configuration>
+                <!--
+                    to use this plugin write in command line
+                    mvn release:prepare
+                    mvn release:perform
+                -->
             </plugin>
         </plugins>
     </build>
+
 
     <scm>
         <developerConnection>scm:git:https://malaz_naoura@bitbucket.org/mezo1/petclinic.git</developerConnection>
