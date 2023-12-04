@@ -1,4 +1,4 @@
-package com.mezo.petclinic.model;
+package com.mezo.model;
 
 public class PetType {
     private String name;

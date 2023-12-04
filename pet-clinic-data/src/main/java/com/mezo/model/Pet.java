@@ -1,9 +1,6 @@
-package com.mezo.petclinic.model;
-
-import com.mezo.petclinic.model.PetType;
+package com.mezo.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Pet {
     private LocalDate birthDate;
