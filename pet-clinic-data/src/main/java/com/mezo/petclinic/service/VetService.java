@@ -4,10 +4,6 @@ import com.mezo.petclinic.model.Vet;
 
 import java.util.Set;
 
-public interface VetService {
-    Vet save(Vet vet);
+public interface VetService extends CrudService<Vet,Long>{
 
-    Vet findById(Long id);
-
-    Set<Vet> findAll();
 }

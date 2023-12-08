@@ -4,10 +4,6 @@ import com.mezo.petclinic.model.Pet;
 
 import java.util.Set;
 
-public interface PetService {
-    Pet save(Pet pet);
+public interface PetService extends CrudService<Pet,Long>{
 
-    Pet findById(Long id);
-
-    Set<Pet> findAll();
 }
