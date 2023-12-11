@@ -3,9 +3,9 @@ package com.mezo.petclinic.bootstrap;
 import com.mezo.petclinic.model.Owner;
 import com.mezo.petclinic.model.Vet;
 import com.mezo.petclinic.service.OwnerService;
-import com.mezo.petclinic.service.OwnerServiceMapImpl;
+import com.mezo.petclinic.service.map.OwnerServiceMapImpl;
 import com.mezo.petclinic.service.VetService;
-import com.mezo.petclinic.service.VetServiceMapImpl;
+import com.mezo.petclinic.service.map.VetServiceMapImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
