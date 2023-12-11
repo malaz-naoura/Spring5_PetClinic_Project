@@ -1,7 +1,7 @@
-package com.mezo.petclinic.service;
+package com.mezo.petclinic.service.map;
 
 import com.mezo.petclinic.model.Vet;
-import com.mezo.petclinic.model.Vet;
+import com.mezo.petclinic.service.VetService;
 
 import java.util.Set;
 
