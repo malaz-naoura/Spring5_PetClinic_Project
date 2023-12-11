@@ -2,9 +2,10 @@ package com.mezo.petclinic.service.map;
 
 import com.mezo.petclinic.model.Pet;
 import com.mezo.petclinic.service.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMapImpl extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
@@ -18,7 +19,7 @@ public class PetServiceMapImpl extends AbstractMapService<Pet, Long> implements 
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
