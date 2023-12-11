@@ -1,4 +1,4 @@
-package com.mezo.petclinic.service;
+package com.mezo.petclinic.service.map;
 
 import java.util.*;
 

@@ -1,6 +1,7 @@
-package com.mezo.petclinic.service;
+package com.mezo.petclinic.service.map;
 
 import com.mezo.petclinic.model.Owner;
+import com.mezo.petclinic.service.OwnerService;
 
 import java.util.Set;
 
