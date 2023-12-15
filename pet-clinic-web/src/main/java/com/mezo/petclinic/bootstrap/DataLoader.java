@@ -1,9 +1,6 @@
 package com.mezo.petclinic.bootstrap;
 
-import com.mezo.petclinic.model.Owner;
-import com.mezo.petclinic.model.Pet;
-import com.mezo.petclinic.model.PetType;
-import com.mezo.petclinic.model.Vet;
+import com.mezo.petclinic.model.*;
 import com.mezo.petclinic.service.OwnerService;
 import com.mezo.petclinic.service.PetTypeService;
 import com.mezo.petclinic.service.VetService;
@@ -74,14 +71,27 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
         System.out.println("Loaded Owners ...");
 
+        // Specialties
+        Specialty radiology=new Specialty();
+        radiology.setDescription("radiology");
+
+        Specialty surgery=new Specialty();
+        radiology.setDescription("surgery");
+
+        Specialty dentistry=new Specialty();
+        radiology.setDescription("dentistry");
+
         // Vets
         Vet vet1 = new Vet();
         vet1.setFirstName("vet1_First");
         vet1.setSecondName("vet1_Second");
+        vet1.getSpecialties().add(radiology);
+        vet1.getSpecialties().add(surgery);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("vet2_First");
         vet2.setSecondName("vet2_Second");
+        vet1.getSpecialties().add(dentistry);
 
         // Save Vets
         vetService.save(vet1);
