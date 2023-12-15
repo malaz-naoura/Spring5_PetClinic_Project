@@ -1,6 +1,6 @@
 package com.mezo.petclinic.model;
 
-public class Specialties extends BaseEntity{
+public class Specialty extends BaseEntity{
 
     private String description;
 
