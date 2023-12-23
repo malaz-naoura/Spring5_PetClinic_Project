@@ -16,11 +16,15 @@ import java.util.Set;
 @Profile("springdatajpa")
 public class PetTypeServiceJpaImpl implements PetTypeService {
 
-    PetTypeRepo petTypeRepo;
+    private final PetTypeRepo petTypeRepo;
+
+    public PetTypeServiceJpaImpl(PetTypeRepo petTypeRepo) {
+        this.petTypeRepo = petTypeRepo;
+    }
 
     @Override
     public Set<PetType> findAll() {
-        Set<PetType>petTypes=new HashSet<>();
+        Set<PetType> petTypes = new HashSet<>();
         petTypeRepo.findAll().forEach(petTypes::add);
         return petTypes;
     }

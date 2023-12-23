@@ -4,11 +4,13 @@ import com.mezo.petclinic.model.Pet;
 import com.mezo.petclinic.model.PetType;
 import com.mezo.petclinic.service.PetService;
 import com.mezo.petclinic.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class PetServiceMapImpl extends AbstractMapService<Pet, Long> implements PetService {
     private final PetTypeService petTypeService;
 
