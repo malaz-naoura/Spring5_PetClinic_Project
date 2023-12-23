@@ -1,7 +1,8 @@
 package com.mezo.petclinic.repositories;
 
 import com.mezo.petclinic.model.Owner;
-import com.mezo.petclinic.service.CrudService;
+import org.springframework.data.repository.CrudRepository;
 
-public interface OwnerRepo extends CrudService<Owner, Long> {
+public interface OwnerRepo extends CrudRepository<Owner, Long> {
+    Owner findBySecondName(String lastName);
 }
