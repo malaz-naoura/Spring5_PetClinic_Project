@@ -28,6 +28,12 @@ public class OwnerServiceMapImpl extends AbstractMapService<Owner, Long> impleme
         return super.findById(id);
     }
 
+    //todo
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
+
     @Override
     public Owner save(Owner object) {
         if (object != null) {
