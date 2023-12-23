@@ -6,11 +6,13 @@ import com.mezo.petclinic.model.PetType;
 import com.mezo.petclinic.service.OwnerService;
 import com.mezo.petclinic.service.PetService;
 import com.mezo.petclinic.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class OwnerServiceMapImpl extends AbstractMapService<Owner, Long> implements OwnerService {
     private final PetService petService;
 
@@ -26,6 +28,12 @@ public class OwnerServiceMapImpl extends AbstractMapService<Owner, Long> impleme
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    //todo
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 
     @Override

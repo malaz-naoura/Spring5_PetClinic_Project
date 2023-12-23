@@ -1,9 +1,7 @@
 package com.mezo.petclinic.bootstrap;
 
 import com.mezo.petclinic.model.*;
-import com.mezo.petclinic.service.OwnerService;
-import com.mezo.petclinic.service.PetTypeService;
-import com.mezo.petclinic.service.VetService;
+import com.mezo.petclinic.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,11 +13,15 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final VisitService visitService;
+    private final SpecialtyService specialtyService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, VisitService visitService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.visitService = visitService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -76,10 +78,14 @@ public class DataLoader implements CommandLineRunner {
         radiology.setDescription("radiology");
 
         Specialty surgery=new Specialty();
-        radiology.setDescription("surgery");
+        surgery.setDescription("surgery");
 
         Specialty dentistry=new Specialty();
-        radiology.setDescription("dentistry");
+        dentistry.setDescription("dentistry");
+
+        specialtyService.save(radiology);
+        specialtyService.save(surgery);
+        specialtyService.save(dentistry);
 
         // Vets
         Vet vet1 = new Vet();
@@ -91,13 +97,22 @@ public class DataLoader implements CommandLineRunner {
         Vet vet2 = new Vet();
         vet2.setFirstName("vet2_First");
         vet2.setSecondName("vet2_Second");
-        vet1.getSpecialties().add(dentistry);
+        vet2.getSpecialties().add(dentistry);
 
         // Save Vets
         vetService.save(vet1);
         vetService.save(vet2);
         System.out.println("Loaded Vets ...");
 
+
+        // Visits
+        Visit visit1=new Visit();
+        visit1.setPet(dogOwner1);
+        visit1.setDescription("it's good");
+        visit1.setDate(LocalDate.now());
+
+        visitService.save(visit1);
+        System.out.println("Loaded Visits ...");
 
     }
 }

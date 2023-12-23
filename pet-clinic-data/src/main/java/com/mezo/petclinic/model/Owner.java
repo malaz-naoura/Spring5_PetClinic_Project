@@ -1,13 +1,19 @@
 package com.mezo.petclinic.model;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Owner extends Person{
-
     private String address;
     private String city;
     private String telephone;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     private Set<Pet> pets=new HashSet<>();
 
     public String getAddress() {
