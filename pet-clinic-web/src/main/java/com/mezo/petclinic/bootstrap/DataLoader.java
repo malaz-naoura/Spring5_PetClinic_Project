@@ -4,6 +4,7 @@ import com.mezo.petclinic.model.*;
 import com.mezo.petclinic.service.OwnerService;
 import com.mezo.petclinic.service.PetTypeService;
 import com.mezo.petclinic.service.VetService;
+import com.mezo.petclinic.service.VisitService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,11 +16,13 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -98,6 +101,15 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
         System.out.println("Loaded Vets ...");
 
+
+        // Visits
+        Visit visit1=new Visit();
+        visit1.setPet(dogOwner1);
+        visit1.setDescription("it's good");
+        visit1.setDate(LocalDate.now());
+
+        visitService.save(visit1);
+        System.out.println("Loaded Visits ...");
 
     }
 }
