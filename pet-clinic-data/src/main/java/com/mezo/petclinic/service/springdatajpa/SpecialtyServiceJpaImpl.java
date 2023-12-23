@@ -3,10 +3,14 @@ package com.mezo.petclinic.service.springdatajpa;
 import com.mezo.petclinic.model.Specialty;
 import com.mezo.petclinic.repositories.SpecialtyRepo;
 import com.mezo.petclinic.service.SpecialtyService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class SpecialtyServiceJpaImpl implements SpecialtyService {
     private final SpecialtyRepo specialtyRepo;
 
