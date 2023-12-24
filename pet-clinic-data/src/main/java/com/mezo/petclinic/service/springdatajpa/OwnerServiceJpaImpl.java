@@ -32,7 +32,7 @@ public class OwnerServiceJpaImpl implements OwnerService {
 
     @Override
     public Owner findByLastName(String lastName) {
-        return ownerRepo.findBySecondName(lastName);
+        return ownerRepo.findByLastName(lastName);
     }
 
     @Override

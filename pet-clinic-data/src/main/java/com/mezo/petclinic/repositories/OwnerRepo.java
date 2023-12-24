@@ -4,5 +4,5 @@ import com.mezo.petclinic.model.Owner;
 import org.springframework.data.repository.CrudRepository;
 
 public interface OwnerRepo extends CrudRepository<Owner, Long> {
-    Owner findBySecondName(String lastName);
+    Owner findByLastName(String lastName);
 }
